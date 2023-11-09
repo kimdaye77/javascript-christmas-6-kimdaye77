@@ -12,13 +12,14 @@ class App {
     OutputView.printTotalPrice(orderBoard.getTotalPrice());
     OutputView.printGiftMenu(orderBoard.getTotalPrice());
 
-    const eventList = applyEvent(
+    const { eventList, discount } = applyEvent(
       date,
       orderBoard.orderItems,
       orderBoard.getTotalPrice()
     );
 
     OutputView.printBenefitList(eventList);
+    OutputView.printTotalBenefitPrice(discount);
   }
 }
 

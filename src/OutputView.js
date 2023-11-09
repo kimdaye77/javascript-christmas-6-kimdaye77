@@ -35,6 +35,10 @@ const OutputView = {
       Console.print(`${event[0]}: -${event[1].toLocaleString()}원`)
     );
   },
+  printTotalBenefitPrice(discount) {
+    Console.print("<총혜택 금액>");
+    Console.print(`-${discount.toLocaleString()}원`);
+  },
 };
 
 export default OutputView;
