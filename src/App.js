@@ -1,6 +1,6 @@
 import InputView from "./InputView.js";
 import OutputView from "./OutputView.js";
-import { getTotalAmountBeforeDiscount } from "./utils.js";
+import { applyEvent } from "./eventUtils.js";
 
 class App {
   async run() {
@@ -11,6 +11,14 @@ class App {
     OutputView.printMenu(orderBoard.orderItems);
     OutputView.printTotalPrice(orderBoard.getTotalPrice());
     OutputView.printGiftMenu(orderBoard.getTotalPrice());
+
+    const eventList = applyEvent(
+      date,
+      orderBoard.orderItems,
+      orderBoard.getTotalPrice()
+    );
+
+    OutputView.printBenefitList(eventList);
   }
 }
 

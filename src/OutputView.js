@@ -25,6 +25,16 @@ const OutputView = {
     }
     Console.print("없음");
   },
+  printBenefitList(eventList) {
+    Console.print("<혜택 내역>");
+    if (eventList.length === 0) {
+      Console.print("없음");
+      return;
+    }
+    eventList.forEach((event) =>
+      Console.print(`${event[0]}: -${event[1].toLocaleString()}원`)
+    );
+  },
 };
 
 export default OutputView;

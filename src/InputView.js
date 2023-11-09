@@ -1,7 +1,6 @@
 import { Console } from "@woowacourse/mission-utils";
 
 import { Order } from "./Order.js";
-import { getMenuNames } from "./utils.js";
 
 const InputView = {
   async readDate() {
@@ -47,6 +46,7 @@ const InputView = {
           }
 
           //TODO: 형식 중복 예외처리
+          //음료만 주문x
         } catch (error) {
           Console.print(error.message);
         }
