@@ -8,18 +8,17 @@ class App {
     const date = await InputView.readDate();
     const orderBoard = await InputView.readMenu();
     OutputView.printBenefitHeader();
-    OutputView.printMenu(orderBoard.orderItems);
-    OutputView.printTotalPrice(orderBoard.getTotalPrice());
-    OutputView.printGiftMenu(orderBoard.getTotalPrice());
+    const orderItems = orderBoard.orderItems;
+    const totalPrice = orderBoard.getTotalPrice();
+    OutputView.printMenu(orderItems);
+    OutputView.printTotalPrice(totalPrice);
+    OutputView.printGiftMenu(totalPrice);
 
-    const { eventList, discount } = applyEvent(
-      date,
-      orderBoard.orderItems,
-      orderBoard.getTotalPrice()
-    );
+    const { eventList, discount } = applyEvent(date, orderItems, totalPrice);
 
     OutputView.printBenefitList(eventList);
     OutputView.printTotalBenefitPrice(discount);
+    OutputView.printTotalPriceAfterDiscount(totalPrice - discount);
   }
 }
 
