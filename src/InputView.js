@@ -23,7 +23,6 @@ const InputView = {
     }
   },
   async readMenu() {
-    const menuNames = getMenuNames();
     while (true) {
       const orderBoard = new Order();
       const input = await Console.readLineAsync(
@@ -52,7 +51,7 @@ const InputView = {
           Console.print(error.message);
         }
       }
-      return orderBoard.orderItems; //TODO: 주문 저장 정리
+      return orderBoard; //TODO: 주문 저장 정리
     }
   },
 };

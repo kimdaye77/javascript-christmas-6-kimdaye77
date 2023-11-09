@@ -10,6 +10,7 @@ export class Order extends Menu {
   addMenuItem(name, cnt) {
     const menuItem = this.findMenuItem(name);
     this.orderItems.push({ menuItem, cnt });
+    this.totalPrice += menuItem.price * cnt;
   }
 
   findMenuItem(name) {
@@ -25,34 +26,6 @@ export class Order extends Menu {
   }
 
   getTotalPrice() {
-    for (const item of this.orderItems) {
-      totalPrice += item.menuItem.price * item.cnt;
-    }
-    return totalPrice;
-  }
-
-  getMenuCount() {
-    const menuCount = {};
-    for (const item of this.orderItems) {
-      if (menuCount[item.name]) {
-        menuCount[item.name]++;
-      } else {
-        menuCount[item.name] = 1;
-      }
-    }
-    return menuCount;
-  }
-
-  printOrderDetails() {
-    console.log("주문 내역:");
-    for (const item of this.orderItems) {
-      console.log(`${item.name} - ${item.price}원`);
-    }
-    console.log(`총 가격: ${this.getTotalPrice()}원`);
-    console.log("메뉴별 개수:");
-    const menuCount = this.getMenuCount();
-    for (const name in menuCount) {
-      console.log(`${name}: ${menuCount[name]}개`);
-    }
+    return this.totalPrice.toLocaleString();
   }
 }
