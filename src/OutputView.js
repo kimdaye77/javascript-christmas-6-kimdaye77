@@ -43,6 +43,24 @@ const OutputView = {
     Console.print("<할인 후 예상 결제 금액>");
     Console.print(`-${price.toLocaleString()}원`);
   },
+  printEventBadge(discount) {
+    let badge = "없음";
+    Console.print("<12월 이벤트 배지>");
+    switch (discount) {
+      case 5_000:
+        badge = "별";
+        break;
+      case 10_000:
+        badge = "트리";
+        break;
+      case 20_000:
+        badge = "산타";
+        break;
+      default:
+        Console.print(badge);
+        break;
+    }
+  },
 };
 
 export default OutputView;

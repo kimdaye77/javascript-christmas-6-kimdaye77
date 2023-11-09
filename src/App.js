@@ -19,6 +19,7 @@ class App {
     OutputView.printBenefitList(eventList);
     OutputView.printTotalBenefitPrice(discount);
     OutputView.printTotalPriceAfterDiscount(totalPrice - discount);
+    OutputView.printEventBadge(discount);
   }
 }
 
