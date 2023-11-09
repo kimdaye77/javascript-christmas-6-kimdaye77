@@ -26,6 +26,6 @@ export class Order extends Menu {
   }
 
   getTotalPrice() {
-    return this.totalPrice.toLocaleString();
+    return this.totalPrice;
   }
 }

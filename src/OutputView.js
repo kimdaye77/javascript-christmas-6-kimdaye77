@@ -15,8 +15,15 @@ const OutputView = {
   },
   printTotalPrice(totalPrice) {
     Console.print("<할인 전 총주문 금액>");
-
-    Console.print(`${totalPrice}원`);
+    Console.print(`${totalPrice.toLocaleString()}원`);
+  },
+  printGiftMenu(totalPrice) {
+    Console.print("<증정 메뉴>");
+    if (totalPrice >= 120_000) {
+      Console.print("샴페인 1개");
+      return;
+    }
+    Console.print("없음");
   },
 };
 

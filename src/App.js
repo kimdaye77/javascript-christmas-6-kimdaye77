@@ -10,6 +10,7 @@ class App {
     OutputView.printBenefitHeader();
     OutputView.printMenu(orderBoard.orderItems);
     OutputView.printTotalPrice(orderBoard.getTotalPrice());
+    OutputView.printGiftMenu(orderBoard.getTotalPrice());
   }
 }
 
