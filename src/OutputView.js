@@ -10,6 +10,12 @@ const OutputView = {
   printMenu(order) {
     Console.print("<주문 메뉴>");
     order.forEach((menu) => {
+      Console.print(`${menu.menuItem.name} ${menu.cnt}개`);
+    });
+  },
+  printTotalAmountBeforeDiscount(order) {
+    Console.print("<할인 전 총주문 금액>");
+    order.forEach((menu) => {
       Console.print(`${menu[0]} ${menu[1]}개`);
     });
   },

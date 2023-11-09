@@ -1,5 +1,6 @@
 import InputView from "./InputView.js";
 import OutputView from "./OutputView.js";
+import { getTotalAmountBeforeDiscount } from "./utils.js";
 
 class App {
   async run() {
@@ -8,6 +9,9 @@ class App {
     const menu = await InputView.readMenu();
     OutputView.printBenefitHeader();
     OutputView.printMenu(menu);
+
+    // const totalAmountBeforeDiscount = getTotalAmountBeforeDiscount(order);
+    // OutputView.printTotalAmountBeforeDiscount(totalAmountBeforeDiscount);
   }
 }
 
