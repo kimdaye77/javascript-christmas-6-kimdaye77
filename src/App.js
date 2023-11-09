@@ -4,7 +4,8 @@ import OutputView from "./OutputView.js";
 class App {
   async run() {
     OutputView.printWelcome();
-    const date = InputView.readDate();
+    const date = await InputView.readDate();
+    const menu = await InputView.readMenu();
   }
 }
 
