@@ -6,6 +6,8 @@ class App {
     OutputView.printWelcome();
     const date = await InputView.readDate();
     const menu = await InputView.readMenu();
+    OutputView.printBenefitHeader();
+    OutputView.printMenu(menu);
   }
 }
 

@@ -25,6 +25,7 @@ const InputView = {
     const menuNames = getMenuNames();
 
     while (true) {
+      const orderItems = [];
       const input = await Console.readLineAsync(
         "주문하실 메뉴를 메뉴와 개수를 알려 주세요. (e.g. 해산물파스타-2,레드와인-1,초코케이크-1)"
       );
@@ -45,12 +46,13 @@ const InputView = {
               "[ERROR] 유효하지 않은 주문입니다. 다시 입력해 주세요."
             );
           }
+          orderItems.push([menuName, quantity]);
           //TODO: 형식 중복 예외처리
         } catch (error) {
           Console.print(error.message);
         }
       }
-      return order; //TODO: 주문 저장 정리
+      return orderItems; //TODO: 주문 저장 정리
     }
   },
 };
